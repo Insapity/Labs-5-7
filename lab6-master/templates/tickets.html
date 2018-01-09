@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body1 %}<h1>Бронь</h1>{% endblock %}
+
+
+{% block body2 %}
+    <p>
+        <ul>
+            {% for ticket in data.tickets %}
+                {% include 'ticket_element.html' with element=ticket %}
+            {% empty %}
+                empty list
+            {% endfor %}
+        </ul>
+    </p>
+{% endblock%}

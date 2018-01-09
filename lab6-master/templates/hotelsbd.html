@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body1 %}
+    <div id="header1">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h1><br>Таблица отелей<br></h1>
+                <table class="table table-hover table-inverse">
+                <tr>
+                    <th>№</th>
+                    <td>Отель</td>
+                    <td>Цена за ночь</td>
+                </tr>
+                {% for hotel in object_list %}
+                    <tr>
+                        <th scope="row">{{hotel.id}}</th>
+                        <td> {{hotel.name_hotel}} </td>
+                        <td>{{ hotel.price_hotel }}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
